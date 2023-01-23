@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('doctor', function (Blueprint $table) {
             $table->id();
-            $table->integer('spesialist_id');
+            $table->foreignId('specialist_id')->nullable()->index('fk_doctor_to_specialists');
             $table->string('name');
             $table->string('vee');
             $table->longText('photo')->nullable();
