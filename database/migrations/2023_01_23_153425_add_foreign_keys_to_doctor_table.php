@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('doctor', function (Blueprint $table) {
             $table->foreign('specialist_id','fk_doctor_to_specialists')
             ->references('id')->on('specialist')
-            ->onDelete('cascade')->onUpdate('cascade');
+            ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

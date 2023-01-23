@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('permission_role', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('permission_id')->nullable()->index('fk_permission_role_to_permission');
+            $table->foreignId('permission_id')->nullable()->index('fk_permission_role_to_permissions');
             $table->integer('role_id');
             $table->timestamps();
             $table->softDeletes();

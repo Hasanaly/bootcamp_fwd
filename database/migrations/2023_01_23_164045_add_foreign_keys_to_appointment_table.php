@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::table('appointment', function (Blueprint $table) {
             $table->foreign('doctor_id', 'fk_appointment_to_doctors')
-            ->references('id')->on('doctor')->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->references('id')->on('doctor')
+            ->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('user_id', 'fk_appointment_to_users')
-            ->references('id')->on('users')->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->references('id')->on('users')
+            ->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('consultation_id', 'fk_appointment_to_consultations')
-            ->references('id')->on('consultation')->onDelete('cascade')
-            ->onUpdate('cascade');
+            ->references('id')->on('consultation')
+            ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

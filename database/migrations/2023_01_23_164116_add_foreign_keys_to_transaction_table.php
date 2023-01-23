@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::table('transaction', function (Blueprint $table) {
             $table->foreign('appointment','fk_transaction_to_appointment')
             ->references('id')->on('appointment')
-            ->onDelete('cascade')->onUpdate('cascade');
+            ->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
