@@ -24,4 +24,9 @@ class TypeUser extends Model
             'name',
             'create_at','update_at','delete_at',
         ];
+        // membuat fungsi has Many dengan nama tabel_tujuan
+        public function detail_user(){
+            //hasMay dengan 2 parameter ('patch model','field foreign key')
+            return $this->hasMany('App\Models\ManagementAccess\DetailUser','type_user_id');
+        }
 }

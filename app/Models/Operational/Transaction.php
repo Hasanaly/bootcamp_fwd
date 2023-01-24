@@ -24,4 +24,8 @@ class Transaction extends Model
             'appointment','fee_doctor','fee_spesialist','fee_hospital','sub_total','vat','total',
             'create_at','update_at','delete_at',
         ];
+
+        public function appointment(){
+            return $this->belongsTo('App\Models\Operational\Appointment','appointment');
+        }
 }

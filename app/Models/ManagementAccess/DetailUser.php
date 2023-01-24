@@ -24,4 +24,9 @@ class DetailUser extends Model
         'user_id','type_user_id','contact','address','photo','gender',
         'create_at','update_at','delete_at',
     ];
+    // membuat fungsi belongsTo dengan nama tabel_asal
+    public function type_user(){
+        //belongsTo dengan 3 parameter ('patch model','field foreign key table_now','field primary key table_asal')
+        return $this->belongsTo('App\Models\MasterData\TypeUser','type_user_id','id');
+    }
 }

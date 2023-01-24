@@ -24,4 +24,12 @@ class Appointment extends Model
         'doctor_id','user_id','consultation_id','level','date','time','status',
         'create_at','update_at','delete_at',
         ];
+
+        public function consultation(){
+            return $this->belongsTo('App\Models\MasterData\Consultation','consultation_id','id');
+        }
+
+        public function transaction(){
+            return $this->hasOne('App\Models\Operational\Transaction','transaction_id');
+        }
 }

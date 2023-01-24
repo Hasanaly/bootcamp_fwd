@@ -24,4 +24,8 @@ class Doctor extends Model
             'specialist_id','name','vee','photo',
             'create_at','update_at','delete_at',
         ];
+
+        public function specialist(){
+            return $this->belongsTo('App\Models\MasterData\Specialist','specialist_id','id');
+        }
 }

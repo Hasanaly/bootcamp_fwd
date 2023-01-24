@@ -24,4 +24,8 @@ class Specialist extends Model
         'name','price',
         'create_at','update_at','delete_at',
         ];
+
+        public function doctor(){
+            return $this->hasMany('App\Models\Operational\Doctor','specialist_id');
+        }
 }
